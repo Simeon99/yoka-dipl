@@ -1,0 +1,17 @@
+.cart-icon-wrapper{
+    transition: transform 0.3s ease;
+    &:active {
+        transform: scale(1.2);
+      }
+
+      .item-num{
+        position: absolute;
+        background-color: rgba(158, 158, 158, 0.721);
+        z-index: 99;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    
+}

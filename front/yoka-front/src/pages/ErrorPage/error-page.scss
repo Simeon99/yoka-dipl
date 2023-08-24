@@ -1,0 +1,57 @@
+@import "../../assets/sass/abstract/_variables.scss";
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 200px;
+    
+
+    .error-mesage {
+        text-align: center;
+        width: 400px;
+
+        h1 {
+            $background-primary: rgb(241, 241, 241);
+            font-size: 70px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Nunito', sans-serif;
+
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        h2{
+            font-size: 30px;
+            font-weight: 700;
+            margin: 20px 0px;
+        }
+        p{
+            color: rgb(131, 131, 131);
+        }
+    }
+
+    .error-buttons{
+        width: 350px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}

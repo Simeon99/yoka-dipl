@@ -1,0 +1,15 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build artifacts
+build/
+dist/
+.cache/
+
+# Ignore environment-specific files
+.env.local
+.env.development
+.env.production
+
+# Ignore specific files
+largefile.mp4

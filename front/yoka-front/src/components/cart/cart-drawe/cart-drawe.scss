@@ -1,0 +1,115 @@
+.cart-drawer-wrapper {
+    .drawer {
+        padding: 10px 20px;
+        overflow: hidden;
+        .drawer-wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .cart-top {
+                .item-enter {
+                    animation: fade-in 1s ease-in-out;
+                }
+
+                // /* Define the final state of the element after the transition */
+                // .item-enter-active {
+                //     opacity: 1;
+                //     transform: translateX(0);
+                //     transition:
+                //         opacity 300ms,
+                //         transform 300ms;
+                // }
+
+                // /* Define the initial state of the element when exiting */
+                // .item-exit {
+                //     opacity: 1;
+                //     transform: translateX(0);
+                // }
+
+                  
+
+                /* Define the final state of the element after exiting */
+                .item-exit-active {
+                    // opacity: 0;
+                    // transform: translateX(-20px);
+                    // transition:
+                    //     opacity 300ms,
+                    //     transform 300ms;
+                    animation: removed-item-animation 1s ease-in-out;
+                }
+                .header-drawer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .close {
+                        transition: transform 0.3s ease;
+                        &:hover {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+                .divider {
+                    height: 1px;
+                    background-color: #d5d5d5;
+                }
+
+            }
+
+            .button-order {
+                position: relative;
+                bottom: 0px;
+            }
+        }
+        @keyframes removed-item-animation {
+            0% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            30% {
+                opacity: 1;
+                transform: translateX(50px);
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateX(-800px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-800px);
+            }
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateX(-800px);
+            }
+
+            10% {
+                opacity: 0;
+                transform: translateX(-800px);
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateX(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+          }
+    }
+}
+@media only screen and (max-width: 500px) {
+    /* Styles for screens smaller than 500px */
+    .drawer {
+        width: 90% !important;
+    }
+}

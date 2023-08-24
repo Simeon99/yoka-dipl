@@ -1,0 +1,41 @@
+.article-details{
+    .article-description{
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        gap: 20px;
+        .span-header{
+  
+          font-weight: bold;
+        }
+        p{
+            
+            font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .article-details{
+        grid-row: 3 !important;
+        grid-column: 1 / -1;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .article-details{
+        grid-row: 3 !important;
+        .show-name{
+            display: none;
+        }
+    }
+    
+    
+}
+
+@media only screen and (max-width: 550px) {
+    .article-description{
+        width: 100% !important;
+        text-align: justify;
+    }
+}

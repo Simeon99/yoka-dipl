@@ -1,0 +1,68 @@
+{
+  "home": "Hello test",
+  "app": {
+    "header": {
+      "furniture": "Nameštaj",
+      "furnitureItems": [
+        "Nesto i Medijski Namestaj",
+        "Skladista i Police",
+        "Stocici za kafu i Stotici za pice",
+        "Sedenje",
+        "Aksesoari",
+        "Po narudzbini"
+      ],
+      "kitchen": "Kuhinja",
+      "aboutAs": "O nama",
+      "aboutUsItems": [
+        "Zdravo",
+        "O brendu",
+        "Entuzijazam",
+        "Proizvodnja",
+        "Uzorak sedista",
+        "Porucivanje",
+        "Kontaktirajte nas"
+      ],
+      "press": "Pres "
+    },
+    "body": {
+      "heading": {
+        "button": "Kupite namestaj"
+      }
+    },
+    "article": {
+      "details": {},
+      "carousel": {},
+      "spec": {
+        "finish": "Odaberite boju",
+        "dimensions": "Odaberite dimenzije",
+        "length": "Dužina",
+        "width": "Širina",
+        "height": "Visina",
+        "add_to_cart": "Dodaj u korpu"
+      }
+    }
+  },
+  "sideboards":{
+    "freeShipping":"Besplatna dostava preko",
+    "ribSideboard": "Rib Komoda"
+  },
+  "article":{
+    "description":{
+      "local_buisnesses_support": "Test na lokalni biznis.",
+      "delivery":"Dostava test.",
+      "eco-friendly":"Ekologija test."
+    },
+    "may_like":"Možda će vam se takodje svideti"
+
+  },
+  "cart":{
+    "tittle": "Korpa",
+    "howToDelliver": "Kako želite primiti porudžbinu_",
+    "delivery": "Dostava na adresu",
+    "pickUp": "Lično preuzimanje"
+  },
+  "cartDrawe":{
+    "tittle": "Korpa",
+    "order": "Poruči"
+  }
+}

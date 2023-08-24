@@ -1,0 +1,117 @@
+.header{
+    height: 70px;
+    width: 100%;
+    position: absolute!important;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .nav-link{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .option{
+        all: unset;
+        color: black;
+        font-size: 20px;
+        &:hover{
+            cursor: pointer;
+            color: gray;
+        }
+    }
+
+    .linkText{
+        color: black;
+        font-size: 20px;
+        &:hover{
+            color: gray;
+        }
+    }
+    .background-image{
+        width: 96px;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+    .logo-container {
+        height: 100%;
+        width: 70px;
+        padding: 25px;
+
+      }
+
+    .options-one{
+        width: 50%;
+        height: 100%;
+        margin-left: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .option{
+            color: black;
+            padding: 10px 15px;
+            font-weight: bold;
+            &:hover{
+                color: gray;
+            }
+        }
+
+    }
+    .options-two{
+        margin-left: auto;
+        margin-right: 50px;
+        display: flex;
+        flex-direction: row;
+        .btn{
+            text-decoration: none;
+            border: none;
+            color: black;
+            outline: none;
+            &:focus{
+                outline: none;
+                box-shadow: none;
+            }
+            &.selected{
+                text-decoration: underline;
+
+            }
+        }
+
+        .btn-sr{
+            text-decoration: none;
+            color: black;
+        }
+
+        .cart{
+            width: 25px;
+            height: 25px;
+            margin: 10px;
+        }
+        .search-icn{
+            width: 25px;
+            height: 25px;
+            margin: 10px;
+
+        }
+    }
+}
+
+.heading-container{
+    width: 100%;
+    height: 70%;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 500px) {
+    .header{
+        margin-top: 0px;
+        .options-two{
+            margin-right: 5px !important;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+@mixin keyframe($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+@mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: $fillmode;
+    -webkit-animation-direction: $direction;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: $fillmode;
+    -moz-animation-direction: $direction;
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: $fillmode;
+    animation-direction: $direction;
+}
+
+@include keyframe(animation-slide-in-down) {
+    0% {
+        transform: translate(0, -100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+#nav-dropdown {
+    color: black;
+    font-size: 20px;
+
+    &::after{
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &:hover {
+        color: gray;
+    }
+}
+
+
+.dropdown-menu.show {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    z-index: -1 !important;
+    width: 100vw;
+
+    .items {
+        position: fixed;
+        padding-top: 100px;
+        top: 0px;
+        left: 0px;
+        padding-left: 150px;
+        width: 100vw;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+
+        @include animation(0, 0.5s, animation-slide-in-down, ease);
+
+    }
+}
+.item-2 {
+    margin-left: 150px;
+}
+.item-3 {
+    margin-left: 50px;
+}
+
+.dd-item {
+    margin: 10px 0px;
+    &:focus{
+        background-color: #E9ECEF !important;
+        color: black !important;
+    }
+}

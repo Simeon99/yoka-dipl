@@ -1,0 +1,33 @@
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    // margin-top: 70px;
+    
+    .social-icons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+        margin-bottom: 50px;
+        img{
+            
+        }
+        a{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .social-icons-wrapper{
+        display: flex;
+        justify-content: center;
+        .social-icons{
+            margin-bottom: 16px !important;
+            position: relative;
+        }
+    }
+ }

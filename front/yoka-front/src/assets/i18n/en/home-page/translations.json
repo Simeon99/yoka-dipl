@@ -1,0 +1,70 @@
+{
+  "home": "Hello tt",
+  "app": {
+    "header": {
+      "furniture": "Furniture",
+      "furnitureItems": [
+        "Sideboards & Media Furniture",
+        "Storage & Shelving",
+        "Coffee Tables & Dining Tables",
+        "Sitting",
+        "Accessories",
+        "Custom"
+      ],
+      "kitchen": "Kitchen",
+      "aboutAs": "AboutAs",
+      "aboutUsItems": [
+        "Hi",
+        "About the brand",
+        "Enthusiasm",
+        "Production",
+        "Sample seats",
+        "Ordering",
+        "Contact Us"
+      ],
+      "press": "Press "
+    },
+    "body": {
+      "heading": {
+        "button": "Shop furniture"
+      }
+    },
+    "article": {
+      "details": {},
+      "carousel": {},
+      "spec": {
+        "finish": "Pick finish",
+        "dimensions": "Pick dimension",
+        "length": "Length",
+        "width": "Width",
+        "height": "Height",
+        "add_to_cart": "Add to Cart"
+      }
+    }
+  },
+  "sideboards": {
+    "freeShipping": "Free shipping over",
+    "ribSideboard": "Rib Sideboard"
+  },
+  "article":{
+    "description":{
+      "local_buisnesses_support": "We value and support local businesses, maintaininglong-term relationships with them. Thanks to shortrangesupply, we significantly shorten lead-times.",
+      "delivery":"Most likely we do not own stock of this product - it is usually made to order. Regular delivery time for all furniture is 4 weeks. All products from one order are being shipped together unless otherwise stated.yoka.rs most commonly does delivery by own. It is free over € 100. The service includes a delivery directly to your home/office, with carrying up stairs and assembling.",
+      "eco-friendly":"We care about the environment, which is why all of our products are manufactured responsibly. We produce them mostly from recycled materials, with almost no use of plastic"
+    },
+    "may_like":"You may also like"
+
+  },
+  "cart":{
+    "tittle": "Shopping cart",
+    "howToDelliver": "How would you like to get order?",
+    "delivery": "Delivery",
+    "pickUp": "Pick up in preson"
+  },
+  "cartDrawe":{
+    "tittle": "Cart",
+    "order": "Order"
+  }
+
+  
+}
