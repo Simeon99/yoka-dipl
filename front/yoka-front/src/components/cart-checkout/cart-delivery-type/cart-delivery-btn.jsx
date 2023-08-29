@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TranslationContext } from "../../context/translation/TranslationContext";
+import { TranslationContext } from "../../../context/translation/TranslationContext";
 import { useTranslation } from "react-i18next";
 import { GrDeliver } from "react-icons/gr";
 

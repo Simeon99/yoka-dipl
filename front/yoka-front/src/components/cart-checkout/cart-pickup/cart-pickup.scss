@@ -1,0 +1,14 @@
+.cart-pick-up {
+    .button-wrapper {
+        margin-top: 16px;
+        &.not-alowed {
+            cursor: not-allowed;
+        }
+    }
+}
+
+@media (min-width: 822.4px) {
+    .button-wrapper {
+        width: 165px;
+    }
+}

@@ -16,6 +16,10 @@
         border-radius: 100px;
         color: white;
     }
+    &.unclickable {
+        background-color: #757575;
+        pointer-events: none;
+    }
     &:hover {
         background-color: rgba(77, 77, 77, 0.863);
         color: black;
@@ -24,7 +28,7 @@
 }
 
 @media only screen and (max-width: 825px) {
-    .custom-button{
+    .custom-button {
         width: 100%;
     }
 }

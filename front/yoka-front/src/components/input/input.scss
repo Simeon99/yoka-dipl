@@ -1,0 +1,10 @@
+.form-group {
+    .form-control:focus {
+        border-color: black;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    .is-invalid{
+        border-color: var(--bs-form-invalid-color) !important;
+    }
+}

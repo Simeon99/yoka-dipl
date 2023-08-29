@@ -1,5 +1,10 @@
 {
   "home": "Hello tt",
+  "authentication":{
+    "message":"Log in to your Yoka account.",
+    "usernameOrEmail":"Username or Email",
+    "password": "Password"
+  },
   "app": {
     "header": {
       "furniture": "Furniture",
@@ -59,7 +64,23 @@
     "tittle": "Shopping cart",
     "howToDelliver": "How would you like to get order?",
     "delivery": "Delivery",
-    "pickUp": "Pick up in preson"
+    "pickUp": "Pick up in preson",
+    "form":{
+      "firstName":"First Name",
+      "lastName":"Last Name",
+      "adress":"Adress",
+      "adressPattern":"Street / number",
+      "city":"City",
+      "country":"Country",
+      "select":"select",
+      "serbia":"Serbia",
+      "croatia":"Croatia",
+      "slovenia":"Slovenia",
+      "email":"Email",
+      "phone":"Phone",
+      "submit":"Submit",
+      "error":"This field is required."
+    }
   },
   "cartDrawe":{
     "tittle": "Cart",

@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { GrDeliver } from "react-icons/gr";
+import { TbTruckDelivery } from "react-icons/tb";
 import { FaWarehouse } from "react-icons/fa";
 
 import { TranslationContext } from "../../context/translation/TranslationContext";
 import "./cart.scss";
-import CartForm from "../../components/cart-form/cart-form";
-import CartDeliveryBtn from "../../components/cart-delivery-type/cart-delivery-btn";
+import CartForm from "../../components/cart-checkout/cart-form/cart-form";
+import CartDeliveryBtn from "../../components/cart-checkout/cart-delivery-type/cart-delivery-btn";
 
 export default function Cart() {
   const tr = useContext(TranslationContext);
   const { t } = useTranslation();
 
-  const [deliveryTipe, setDeliveryTipe] = useState(true);
+  const [deliveryTipe, setDeliveryTipe] = useState(false);
   const [isSelectedDelivery, setIsSelectedDelivery] = useState(false);
   const [isSelectedPickUp, setIsSelectedPickUp] = useState(true);
 
@@ -20,12 +20,14 @@ export default function Cart() {
     if (!isSelectedDelivery) {
       setIsSelectedDelivery(!isSelectedDelivery);
       setIsSelectedPickUp(!isSelectedPickUp);
+      setDeliveryTipe(true)
     }
   };
   const updatePickUp = () => {
     if (!isSelectedPickUp) {
       setIsSelectedDelivery(!isSelectedDelivery);
       setIsSelectedPickUp(!isSelectedPickUp);
+      setDeliveryTipe(false)
     }
   };
 
@@ -39,7 +41,7 @@ export default function Cart() {
           onClick={updateDelivery}
           deliveryTipe={isSelectedDelivery}
         >
-          <GrDeliver />
+          <TbTruckDelivery />
           {t("cart.delivery")}
         </CartDeliveryBtn>
         <CartDeliveryBtn

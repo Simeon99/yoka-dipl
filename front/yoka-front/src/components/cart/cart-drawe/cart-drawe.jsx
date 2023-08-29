@@ -30,7 +30,6 @@ const CartDrawer = () => {
 
   const navigate = useNavigate();
 
-
   const handleClick = (event) => {
     event.preventDefault();
     navigate("/shoppingcart");
@@ -38,16 +37,14 @@ const CartDrawer = () => {
   };
 
   useEffect(() => {
-    if(cartItems.length === 0){
-    setTimeout(() => {
-      setShowEmpty(false);
-    }, 1000); }
-    else setShowEmpty(true); 
-
+    if (cartItems.length === 0) {
+      setTimeout(() => {
+        setShowEmpty(false);
+      }, 1000);
+    } else setShowEmpty(true);
   }, [cartItems.length]);
 
   useEffect(() => {
-    
     setTotalprice(
       cartItems.reduce(
         (accumulator, currentItem) =>
@@ -92,7 +89,7 @@ const CartDrawer = () => {
               <CartEmpty />
             )}
           </div>
-          {(cartItems.length) ? (
+          {cartItems.length ? (
             <div className="cart-bottom">
               <div className="button-order">
                 <CustomButton

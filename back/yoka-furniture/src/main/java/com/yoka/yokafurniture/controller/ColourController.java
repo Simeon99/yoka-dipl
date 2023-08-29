@@ -62,7 +62,6 @@ public class ColourController {
         return colourService.getColourById(colourId, LocaleContextHolder.getLocale());
     }
 
-
     @PostMapping("articles/{articleId}/colours/{colourId}")
     public ResponseEntity<String> addColourToArticle(@PathVariable (name = "articleId") long articleId,
                                                      @PathVariable (name = "colourId") long colourId){

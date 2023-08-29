@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
-import { Link } from "react-router-dom";
-import { FaShoppingBag } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import { MdAccountCircle } from "react-icons/md";
+
 import { IoSearchSharp } from "react-icons/io5";
 
 import "./header.styles.scss";
@@ -17,12 +18,13 @@ import CartDrawer from "../cart/cart-drawe/cart-drawe";
 const Header = () => {
   const { t, i18n } = useTranslation();
 
+  const { pathname } = useLocation();
+
   const { tr, setTranslation } = useContext(TranslationContext);
 
   const [furnitureCattegories, setFurnitureCattegories] = useState([]);
 
   const { hidden } = useContext(CartContext);
-
 
   const [curentLang, setCurentLang] = useState(
     window.localStorage.getItem("t")
@@ -39,8 +41,6 @@ const Header = () => {
       .get(`${process.env.REACT_APP_API_URL}/api/categories`, { headers })
       .then((response) => {
         setFurnitureCattegories(response.data);
-        console.log("AAAAAAA", response.data[0].name);
-        console.log("BBBBBB", curentLang);
       })
       .catch((error) => {
         console.log(error);
@@ -75,6 +75,8 @@ const Header = () => {
     { key: 6, name: t("app.header.aboutUsItems.5") },
     { key: 7, name: t("app.header.aboutUsItems.6") },
   ];
+  if(pathname === "/authentication/signin" || pathname === "/authentication/login")return <></>
+
   return (
     <div className="header-container">
       <Navbar expand="lg" className="header">
@@ -111,6 +113,9 @@ const Header = () => {
             </div>
           </Nav>
           <div className="options-two">
+            <Link className="option" to={"/authentication/signin"}>
+              <MdAccountCircle className="account" size={30} />
+            </Link>
             <button
               type="button"
               className={
@@ -132,10 +137,8 @@ const Header = () => {
               SR
             </button>
             <IoSearchSharp className="search-icn" />
-            {/* <FaShoppingBag className="cart" /> */}
 
             <CartDrawer />
-            {console.log(hidden)}
           </div>
           <CustomHamvurger items={furnitureCattegories} />
         </Container>

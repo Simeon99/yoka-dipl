@@ -1,5 +1,10 @@
 {
   "home": "Hello test",
+  "authentication":{
+    "message":"Prijavi se na Yoka nalog.",
+    "usernameOrEmail":"Korisnicko ima ili email",
+    "password": "Lozinka"
+  },
   "app": {
     "header": {
       "furniture": "Nameštaj",
@@ -59,7 +64,23 @@
     "tittle": "Korpa",
     "howToDelliver": "Kako želite primiti porudžbinu_",
     "delivery": "Dostava na adresu",
-    "pickUp": "Lično preuzimanje"
+    "pickUp": "Lično preuzimanje",
+    "form":{
+      "firstName":"Ime",
+      "lastName":"Prezime",
+      "adress":"Adresa",
+      "adressPattern":"Ulica / broj",
+      "city":"Grad",
+      "country":"Država",
+      "select":"Odaberi",
+      "serbia":"Srbija",
+      "croatia":"Hrvatska",
+      "slovenia":"Slovenia",
+      "email":"Email",
+      "phone":"Telefon",
+      "submit":"Potvrdi",
+      "error":"Polje ne sme biti prazno."
+    }
   },
   "cartDrawe":{
     "tittle": "Korpa",

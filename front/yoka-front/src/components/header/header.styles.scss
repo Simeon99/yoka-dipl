@@ -67,6 +67,13 @@
         margin-right: 50px;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        .account{
+            &:hover{
+                color: gray;
+                cursor: pointer;
+            }
+        }
         .btn{
             text-decoration: none;
             border: none;

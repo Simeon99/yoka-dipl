@@ -11,6 +11,7 @@ import com.yoka.yokafurniture.utils.AppConstants;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -33,6 +34,12 @@ public class ArticleController {
         this.articleImageService = articleImageService;
     }
 
+    @GetMapping("/test")
+    public ResponseEntity<String> testGet(){
+        return ResponseEntity.ok("TEst");
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/category/{categoryId}")
     public ResponseEntity<ArticleDto> createArticle(@PathVariable long categoryId,
                                                     @RequestParam("name") String name,
@@ -94,11 +101,13 @@ public class ArticleController {
         return ResponseEntity.ok(articleService.getArticleById(id, LocaleContextHolder.getLocale()));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<ArticleDto> updateArticle(@RequestBody ArticleDto articleDto, @PathVariable(name = "id") long id){
         return new ResponseEntity<>(articleService.upadteArticle(articleDto,id),HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteArticle(@PathVariable(name = "id") long id){
         articleService.deleteArticle(id);

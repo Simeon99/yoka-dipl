@@ -10,6 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import { useMemo, useState } from "react";
 import { TranslationContext } from "./context/translation/TranslationContext";
 import Cart from "./pages/cart/cart";
+import Authentication from "./pages/authentication/authentication";
 
 function App() {
   const [t, setTranslation] = useState(
@@ -28,6 +29,7 @@ function App() {
           <Route path="/arcticle/:id" element={<ArcticlePage />} />
           <Route path="/furniture-category/:id" element={<ShowArcticles />} />
           <Route path="/shoppingcart" element={<Cart/>}/>
+          <Route path="/authentication/signin" element={<Authentication/>}/>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
