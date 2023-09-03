@@ -1,0 +1,48 @@
+@import "../../assets/sass/abstract/variables";
+
+.profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    // justify-content: center;
+    gap: 150px;
+    width: 100%;
+    margin-top: 100px;
+    background-color: $sub-gray;
+
+    .profile-header-wrapper {
+        // width: 200px;
+        // margin: 100px;
+        // width: 100%;
+        padding: 50px 100px;
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+
+            .user-name {
+                font-weight: bold;
+                font-size: 25px;
+            }
+
+            .buttons-wrapper {
+                display: flex;
+                flex-direction: column;
+                font-weight: bold;
+                font-size: 16px;
+
+                .select-button {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &.active {
+                        font-size: 17px;
+                        color: #df5819;
+                    }
+                }
+            }
+        }
+    }
+    .profile-body {
+        // background-color: gainsboro;
+        margin-top: 50px;
+    }
+}

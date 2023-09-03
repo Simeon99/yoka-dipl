@@ -1,15 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState  } from "react";
 
 import Input from "../../input/input";
+import BarLoader from "react-spinners/BarLoader";
 
 import CustomButton from "../../custom-button/custom-button.component";
 
-import './sign-in.scss'
-import { useTranslation } from 'react-i18next';
+import "./sign-in.scss";
+import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { useContext } from "react";
+import { UserContext } from "../../../context/user/UserContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+
 
 export default function SignIn() {
-
   const { t } = useTranslation();
+
+  const { user, setUser } = useContext(UserContext);
+  const [badCredentials, setBadCredentials] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
 
   const [formState, setFormState] = useState({
     usernameOrEmail: "",
@@ -21,7 +34,6 @@ export default function SignIn() {
     inValid: {
       usernameOrEmail: true,
       password: true,
-
     },
   });
 
@@ -56,35 +68,55 @@ export default function SignIn() {
     }
   };
 
-  function handleSubmit(e) {
+  const login = (e) => {
     e.preventDefault();
-    if (
-      formState.inValid.usernameOrEmail ||
-      formState.inValid.password 
-    )
-      console.log(
-        "Account",
-        formState.usernameOrEmail,
-        formState.password,
-      );
-      
-  }
+
+    const data = {
+      usernameOrEmail: formState.usernameOrEmail,
+      password: formState.password,
+    };
+
+    console.log(data);
+
+    setLoading(true);
+
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/api/auth/login`, data)
+      .then((response) => {
+        const userData = response.data;
+
+        setUser(userData);
+        window.localStorage.setItem("user", JSON.stringify(userData));
+        console.log("BABABABA", userData);
+        navigate(`/`);
+        toast.success(t("authentication.successLogin"));
+      })
+      .catch((error) => {
+        setBadCredentials(true);
+
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   return (
-    <div className='signi-in-wrapper'>
-      <form onSubmit={handleSubmit}>
+    <div className="signi-in-wrapper">
+      <form onSubmit={login}>
         <div class="row">
           <Input
             col="col-md-12"
             forLable="usernameOrEmail"
             label={t("authentication.usernameOrEmail")}
             type="text"
+            error={badCredentials}
             className="form-control"
             value={formState.usernameOrEmail}
             handleChange={handleInputChange}
             placeholder={t("authentication.usernameOrEmail")}
             isInValid={
-              formState.touched.usernameOrEmail && formState.inValid.usernameOrEmail
+              formState.touched.usernameOrEmail &&
+              formState.inValid.usernameOrEmail
             }
           />
           <Input
@@ -92,6 +124,7 @@ export default function SignIn() {
             forLable="password"
             label={t("authentication.password")}
             type="password"
+            error={badCredentials}
             className="form-control"
             value={formState.password}
             handleChange={handleInputChange}
@@ -99,17 +132,22 @@ export default function SignIn() {
             isInValid={formState.touched.password && formState.inValid.password}
           />
         </div>
-      
+        {badCredentials ? (
+          <div class="alert alert-danger" role="alert">
+            {t("authentication.error")}
+          </div>
+        ) : (
+          ""
+        )}
+
         <div
           class={`button-wrapper ${
-            formState.inValid.usernameOrEmail ||
-            formState.inValid.password
+            formState.inValid.usernameOrEmail || formState.inValid.password
               ? "not-alowed"
               : ""
           }`}
           style={
-            formState.inValid.usernameOrEmail ||
-            formState.inValid.password
+            formState.inValid.usernameOrEmail || formState.inValid.password
               ? { cursor: "not-allowed" }
               : { cursor: "pointer" }
           }
@@ -117,14 +155,33 @@ export default function SignIn() {
           <CustomButton
             type="submit"
             unclickable={
-              formState.inValid.usernameOrEmail ||
-              formState.inValid.password
+              formState.inValid.usernameOrEmail || formState.inValid.password
             }
           >
             {t("cart.form.submit")}
           </CustomButton>
+          
         </div>
+        <hr />
+        <CustomButton
+            type="button"
+            onClick={() => {navigate(`/authentication/register`);}}
+            isWhite={true}
+          >
+            {t("authentication.createAccount")}
+          </CustomButton>
       </form>
+      <BarLoader
+        height={5}
+        className="bar-loader"
+        color="black"
+        loading={loading}
+        cssOverride={{
+          width: "100%",
+          marginTop:"5px"
+        }}
+        speedMultiplier={1.5}
+      />
     </div>
-  )
+  );
 }

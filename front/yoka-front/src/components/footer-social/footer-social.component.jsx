@@ -1,15 +1,16 @@
 import React from "react";
 
 import "./footer-styles.scss";
+import { useTranslation } from "react-i18next";
 
-const FooterSocial = () => (
+const FooterSocial = () => {
+  const { t } = useTranslation();
+  
+  return (
   <div className="footer-social">
     <span>Yoka Furniture</span>
     <span>
-      It’s simple. We make furniture. We believe that the space that surrounds
-      us has an enormous impact on us and shapes the way we perceive the world.
-      That is precisely why we create beautiful and functional items which
-      accompany you each day.
+      {t("app.footer.text")}
     </span>
     <div className="social-icons-wrapper">
       <div className="social-icons">
@@ -25,7 +26,7 @@ const FooterSocial = () => (
       </div>
     </div>
 
-    <span>© 2022 Yoka Furniture. All Rights Reserved.</span>
+    <span>© 2022 {t("app.footer.rights")}</span>
   </div>
-);
+);}
 export default FooterSocial;

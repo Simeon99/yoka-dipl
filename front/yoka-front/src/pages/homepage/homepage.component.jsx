@@ -1,10 +1,13 @@
 import React from "react";
 import Heading from "../../components/heading/heading.component";
 
-import 'bootstrap/dist/css/bootstrap.css';
+
+import "bootstrap/dist/css/bootstrap.css";
 
 import "./homepage.styles.scss";
 import WithScrollbar from "../../components/carousel/carousel.component";
+import { Toaster } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const images = [
   { url: "img/home-page/sugg-flat-sh.png", route: "/sugg-flat-sh" },
@@ -18,9 +21,16 @@ const imagesInstagram = [
   { url: "img/home-page/sugg-rib-sb1.png", route: "/sugg-rib-sb1" },
 ];
 
-const HomePage = () => {
+const HomePage = ({ isLoggedOut }) => {
+
+  const { t } = useTranslation();
+
+
   return (
     <div className="home-page-container">
+      <div>
+        <Toaster />
+      </div>
       <div className="heading-container">
         <Heading />
       </div>
@@ -31,7 +41,7 @@ const HomePage = () => {
         ></div>
         <div className="item-2">
           <div className="header-scrollbar">
-            <h2>This week's bestsellers</h2>
+            <h2>{t("app.body.thisWeek")}</h2>
           </div>
           <WithScrollbar images={images} />
         </div>
@@ -41,7 +51,7 @@ const HomePage = () => {
               <a href="https://www.instagram.com/yoka_furniture/">
                 @ yoka_furniture
               </a>{" "}
-              on Instagram
+              {t("app.body.onIg")}
             </h2>
           </div>
           <WithScrollbar images={imagesInstagram} />

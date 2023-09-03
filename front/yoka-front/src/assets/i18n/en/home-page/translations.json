@@ -3,7 +3,16 @@
   "authentication":{
     "message":"Log in to your Yoka account.",
     "usernameOrEmail":"Username or Email",
-    "password": "Password"
+    "password": "Password",
+    "error":"Invalid credentials.",
+    "passwordNotMatch": "Passwords does not match.",
+    "createAccount" : "Create new account",
+    "emailExist": "Email is already taken!",
+    "usernameExist": "Username is already taken!",
+    "accountCreated": "Account created successfully.",
+    "accountFailed": "Registration Failed. Please try again.",
+    "successLogin": "Welcome back! You are now logged in.",
+    "logOutMessage": "You have been securely logged out."
   },
   "app": {
     "header": {
@@ -27,12 +36,34 @@
         "Ordering",
         "Contact Us"
       ],
-      "press": "Press "
+      "press": "Press ",
+      "logOut": "Log Out"
     },
     "body": {
       "heading": {
         "button": "Shop furniture"
-      }
+      },
+      "thisWeek": "This week's bestsellers",
+      "onIg": "on Instagram"
+    },
+    "footer":{
+      "text": "It’s simple. We make furniture. We believe that the space that surrounds us has an enormous impact on us and shapes the way we perceive the world. That is precisely why we create beautiful and functional items which accompany you each day.",
+      "rights": "Yoka Furniture. All Rights Reserved.",
+      "aboutBrand":"About the Brand",
+      "enthusiasm":"Enthusiasm",
+      "production":"Production",
+      "sampleSets":"Sample sets",
+      "termsOfUse":"Terms of Use",
+      "returnReplacment":"Return and replacment",
+      "delivery":"Delivery Information",
+      "ordering":"Ordering",
+      "privacyPolicy":"Privacy Policy",
+      "contactUs":"Contact Us",
+      "openingHours":"Opening hours",
+      "holidays":"Saturday, Sundays and holidays:",
+      "phone":"Phone",
+      "mToFri":"Monday - Friday:",
+      "poweredBy":"Powered by:"
     },
     "article": {
       "details": {},
@@ -78,6 +109,9 @@
       "slovenia":"Slovenia",
       "email":"Email",
       "phone":"Phone",
+      "username": "Username",
+      "password":"Password",
+      "repeatPassword":"Repeat password",
       "submit":"Submit",
       "error":"This field is required."
     }
@@ -85,6 +119,15 @@
   "cartDrawe":{
     "tittle": "Cart",
     "order": "Order"
+  },
+  "account":{
+    "showOrders":"Orders",
+    "accountDetails": "Account details",
+    "adress": "Adress",
+    "addressCreated": "Address successfully created.",
+    "addressError": "Error createing address. ",
+    "addAddress": "Add new address",
+    "add": "Add"
   }
 
   

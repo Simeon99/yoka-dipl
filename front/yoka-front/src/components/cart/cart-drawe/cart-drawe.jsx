@@ -68,7 +68,9 @@ const CartDrawer = () => {
           <div className="cart-top">
             <div className="header-drawer">
               <h1>{t("cartDrawe.tittle")}</h1>
-              <GrClose onClick={toggleHidden} className="close" />
+              <div className="close">
+                <GrClose onClick={toggleHidden} />
+              </div>
             </div>
             <div class="divider"></div>
             {showEmpty ? (

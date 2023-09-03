@@ -24,3 +24,21 @@
         }
     }
 }
+
+@media only screen and (max-width: 825px) {
+    .logo-signin {
+        width: 100%;
+        height: calc(16px * 2 + 30px) !important;
+        display: flex;
+        flex-direction: row !important;
+        justify-content: left !important;
+        h2{
+            font-size: 20px !important;
+        }
+
+        .background-image {
+            margin-left: calc(16px * 2 + 30px) !important;
+            width: 90px !important;
+        }
+    }
+}

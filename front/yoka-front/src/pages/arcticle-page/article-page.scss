@@ -1,7 +1,9 @@
+@import '../../assets/sass/abstract/variables';
+
 .article-page-wrapper {
     overflow: hidden;
     .article-wrapper {
-        background-color: #f8f8f8;
+        background-color: $sub-gray;
         display: flex;
         justify-content: center;
         .article {

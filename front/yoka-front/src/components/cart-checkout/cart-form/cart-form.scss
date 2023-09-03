@@ -1,0 +1,73 @@
+.adress-cart-wrapper {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .user-address-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+        .user-adress-cart {
+            box-shadow:
+                0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: white;
+            border-radius: 5px;
+            width: 300px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon-del-address {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: rotate(45deg);
+                    background-color: rgba(255, 22, 22, 0.329);
+                }
+            }
+
+            .detail {
+                .bold {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+            &:hover {
+                animation: scale-animation 0.5s;
+                animation-fill-mode: forwards;
+                cursor: pointer;
+            }
+
+            &.is-selected{
+                transform: scale(1.1);
+                background-color: #df5819;
+                animation: none;
+                animation-fill-mode: none;
+            }
+
+            &.no-address {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+@keyframes scale-animation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}

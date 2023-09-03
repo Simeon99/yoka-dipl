@@ -4,7 +4,7 @@ import './custom-button.styles.scss'
 
 const CustomButton = ({children, isRounded, ...otherProps}) => (
 
-    <button className={` ${isRounded? 'is-rounded':''} ${otherProps.unclickable ? 'unclickable': ''} custom-button`} {...otherProps}> 
+    <button className={` ${isRounded? 'is-rounded':''} ${otherProps.unclickable ? 'unclickable': ''} ${otherProps.isWhite ? 'isWhite': ''} custom-button`} {...otherProps}> 
         {children}
     </button>
 

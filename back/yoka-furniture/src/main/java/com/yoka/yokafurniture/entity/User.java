@@ -39,7 +39,13 @@ public class User {
     joinColumns = @JoinColumn(name = "user_id",referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "role_id",referencedColumnName = "id"))
     private Set<Role> roles;
-//    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private Set<Address> addresses = new HashSet<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Address> addresses = new HashSet<>();
+
+
+    public void addAddress(Address address){
+        this.addresses.add(address);
+        address.setUser(this);
+    }
 
 }

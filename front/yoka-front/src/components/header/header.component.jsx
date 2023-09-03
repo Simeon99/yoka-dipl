@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdAccountCircle } from "react-icons/md";
 
 import { IoSearchSharp } from "react-icons/io5";
@@ -14,17 +14,23 @@ import CustomHamvurger from "../hamburger/hamburger.component";
 import { TranslationContext } from "../../context/translation/TranslationContext";
 import { CartContext } from "../../providers/cart.provider";
 import CartDrawer from "../cart/cart-drawe/cart-drawe";
+import { UserContext } from "../../context/user/UserContext";
+import { toast } from "react-hot-toast";
+import HeaderUser from "../user/header-user/header-user";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
 
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  const { tr, setTranslation } = useContext(TranslationContext);
+  const tr = useContext(TranslationContext);
+
+  const { setTranslation } = useContext(TranslationContext);
 
   const [furnitureCattegories, setFurnitureCattegories] = useState([]);
 
-  const { hidden } = useContext(CartContext);
+  const { user, setUser } = useContext(UserContext);
 
   const [curentLang, setCurentLang] = useState(
     window.localStorage.getItem("t")
@@ -47,9 +53,17 @@ const Header = () => {
       });
   };
 
+  const logOut = () => {
+    setUser(null);
+    window.localStorage.removeItem("user");
+    toast.success(t("authentication.logOutMessage"));
+    navigate("/");
+  };
+
   useEffect(() => {
+    console.log(tr.t);
     fetchData();
-  }, []);
+  }, [tr]);
 
   const changeLanguage = (e) => {
     setCurentLang(e.target.value);
@@ -75,7 +89,11 @@ const Header = () => {
     { key: 6, name: t("app.header.aboutUsItems.5") },
     { key: 7, name: t("app.header.aboutUsItems.6") },
   ];
-  if(pathname === "/authentication/signin" || pathname === "/authentication/login")return <></>
+  if (
+    pathname === "/authentication/signin" ||
+    pathname === "/authentication/register"
+  )
+    return <></>;
 
   return (
     <div className="header-container">
@@ -113,9 +131,14 @@ const Header = () => {
             </div>
           </Nav>
           <div className="options-two">
-            <Link className="option" to={"/authentication/signin"}>
-              <MdAccountCircle className="account" size={30} />
-            </Link>
+            {user ? (
+              <HeaderUser user={user} logOut={logOut}/>
+            ) : (
+              <Link className="option" to={"/authentication/signin"}>
+                <MdAccountCircle className="account" size={30} />
+              </Link>
+            )}
+
             <button
               type="button"
               className={

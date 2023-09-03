@@ -2,8 +2,17 @@
   "home": "Hello test",
   "authentication":{
     "message":"Prijavi se na Yoka nalog.",
-    "usernameOrEmail":"Korisnicko ima ili email",
-    "password": "Lozinka"
+    "usernameOrEmail":"Korisničko ima ili email",
+    "password": "Lozinka",
+    "error":"Pogresni kredencijali.",
+    "passwordNotMatch": "Lozinke se ne poklapaju.",
+    "createAccount" : "Kreiraj novi nalog",
+    "emailExist": "Email već postoji!",
+    "usernameExist": "Username već postoji!",
+    "accountCreated": "Uspešno ste se registrovali.",
+    "accountFailed": "Registracija nije uspela. Molim vas, pokušajte ponovo.",
+    "successLogin": "Dobrodošli nazad! Sada ste prijavljenji.",
+    "logOutMessage": "Uspešno ste se izlogovali."
   },
   "app": {
     "header": {
@@ -27,12 +36,34 @@
         "Porucivanje",
         "Kontaktirajte nas"
       ],
-      "press": "Pres "
+      "press": "Pres ",
+      "logOut": "Odjavi se"
     },
     "body": {
       "heading": {
         "button": "Kupite namestaj"
-      }
+      },
+      "thisWeek": "Najprodavaniji ove nedelje",
+      "onIg": "na Instagramu"
+    },
+    "footer":{
+      "text": "To je jednostavno. Mi pravimo nameštaj. Verujemo da prostor koji nas okružuje ima ogroman uticaj na nas i oblikuje način na koji doživljavamo svet. Upravo zato stvaramo lepe i funkcionalne predmete koji vas prate svaki dan.",
+      "rights": "Yoka Furniture. Sva prava zadržana.",
+      "aboutBrand":"O brendu",
+      "enthusiasm":"Entuzijazam",
+      "production":"Proizvodnja",
+      "sampleSets":"Skupovi uzoraka",
+      "termsOfUse":"Uslovi korišćenja",
+      "returnReplacment":"Povratak i zamena",
+      "delivery":"Informacije o isporuc",
+      "ordering":"Naručivanje",
+      "privacyPolicy":"Politika privatnosti",
+      "contactUs":"Kontaktirajte nas",
+      "openingHours":"Radno vreme",
+      "holidays":"Subota, nedelja i praznici:",
+      "phone":"Telefon",
+      "mToFri":"Ponedeljak - petak:",
+      "poweredBy":"Pokreće:"
     },
     "article": {
       "details": {},
@@ -62,7 +93,7 @@
   },
   "cart":{
     "tittle": "Korpa",
-    "howToDelliver": "Kako želite primiti porudžbinu_",
+    "howToDelliver": "Kako želite primiti porudžbinu?",
     "delivery": "Dostava na adresu",
     "pickUp": "Lično preuzimanje",
     "form":{
@@ -78,6 +109,9 @@
       "slovenia":"Slovenia",
       "email":"Email",
       "phone":"Telefon",
+      "username": "Korisničko ime",
+      "password":"Lozinka",
+      "repeatPassword":"Ponovi lozinku",
       "submit":"Potvrdi",
       "error":"Polje ne sme biti prazno."
     }
@@ -85,5 +119,14 @@
   "cartDrawe":{
     "tittle": "Korpa",
     "order": "Poruči"
+  },
+  "account":{
+    "showOrders":"Porudzbine",
+    "accountDetails": "Detalji profila",
+    "adress": "Adresa",
+    "addressCreated": "Address successfully created.",
+    "addressError": "Error createing address. ",
+    "addAddress": "Dodaj novu adresu",
+    "add": "Dodaj"
   }
 }

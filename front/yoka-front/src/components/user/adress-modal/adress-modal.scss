@@ -1,0 +1,23 @@
+.close-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: rotate(90deg);
+        background-color: rgba(255, 22, 22, 0.329);
+    }
+}
+
+.button-wrapper {
+    margin-top: 16px;
+    &.not-alowed {
+        cursor: not-allowed;
+    }
+}

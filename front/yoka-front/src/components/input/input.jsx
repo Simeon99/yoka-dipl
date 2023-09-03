@@ -10,7 +10,7 @@ const Input = ({ handleChange, className, error, label, ...otherProps }) => {
       <label for={otherProps.forLable}>{label}</label>
       <input
         type={otherProps.type}
-        className={`${className} ${otherProps.isInValid ? "is-invalid" : ""} `}
+        className={`${className} ${otherProps.isInValid ? "is-invalid" : ""} ${error ? "error" : ""}`}
         id={otherProps.forLable}
         value={otherProps.value}
         onChange={(e) => handleChange(e)}

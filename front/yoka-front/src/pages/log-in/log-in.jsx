@@ -4,13 +4,13 @@ import { Link, Route, useNavigate } from "react-router-dom";
 
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
-import "./authentication.scss";
+import "./log-in.scss";
 import { useTranslation } from "react-i18next";
 import SignUp from "../../components/authentication/sign-up/sign-up";
 import LogoAuthentication from "../../components/authentication/logo-authentication/logo-authentication";
 import SignIn from "../../components/authentication/sign-in/sign-in";
 
-export default function Authentication() {
+export default function LogIn() {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -21,7 +21,6 @@ export default function Authentication() {
       </div>
       <div className="form-signin">
         <SignIn />
-        {/* <Route path="/signin" component={SignIn} /> */}
       </div>
     </div>
   );

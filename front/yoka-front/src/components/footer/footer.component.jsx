@@ -8,23 +8,29 @@ import Col from "react-bootstrap/Col";
 
 import "./footer.styles.scss";
 import { useLocation } from "react-router-dom";
-const items1 = [
-  "About the Brand",
-  "Enthusiasm",
-  "Production",
-  "Sample sets",
-  "Downloads",
-];
-const items2 = [
-  "Terms of Use",
-  "Return and replacment",
-  "Delivery Information",
-  "Ordering",
-  "Privacy Policy",
-];
+import { useTranslation } from "react-i18next";
+
+
 const Footer = () => {
+
+  const { t } = useTranslation()
+
+  const items1 = [
+    t("app.footer.aboutBrand"),
+    t("app.footer.enthusiasm"),
+    t("app.footer.production"),
+    t("app.footer.sampleSets"),
+  ];
+
+  const items2 = [
+    t("app.footer.termsOfUse"),
+    t("app.footer.returnReplacment"),
+    t("app.footer.delivery"),
+    t("app.footer.ordering"),
+    t("app.footer.privacyPolicy"),
+  ];
   const { pathname } = useLocation();
-  if (pathname === "/authentication/signin" || pathname === "/authentication/login") return <></>;
+  if (pathname === "/authentication/signin" || pathname === "/authentication/register") return <></>;
 
   return (
     <div className="footer">

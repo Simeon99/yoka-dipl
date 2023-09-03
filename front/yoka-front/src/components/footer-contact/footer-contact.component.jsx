@@ -1,21 +1,26 @@
 import React from "react";
 
 import "./footer-styles.scss";
+import { useTranslation } from "react-i18next";
 
-const FooterContact = () => (
+const FooterContact = () => {
+  
+  const { t } = useTranslation();
+
+  return (
   <div className="footer-contact">
     <div className="contact-item">
-      <span>Contact Us</span>
+      <span> {t("app.footer.contactUs")}</span>
     </div>
     <div className="contact-item">
-      <span>Opening hours (GMT+1)</span>
+      <span>{t("app.footer.openingHours")} (GMT+1)</span>
       <br />
-      <span>Monday - Friday: 10-18</span>
+      <span>{t("app.footer.mToFri")} 10-18</span>
       <br />
-      <span>Saturday, Sundays and holidays: 12-16</span>
+      <span>{t("app.footer.holidays")} 12-16</span>
     </div>
     <div className="contact-item">
-      <span>Phone</span>
+      <span>{t("app.footer.phone")}</span>
       <br />
       <a href="tel:+381 64 288 17 38">+381 64 288 17 38</a>
       <br />
@@ -27,7 +32,7 @@ const FooterContact = () => (
       <a href="mailto:designyoka@gmail.com">designyoka@gmail.com</a>
     </div>
     <div className="powered-item">
-      <span>Powered by:</span>
+      <span>{t("app.footer.poweredBy")}</span>
       <br />
       <span>Simeon Ilić</span>
       <br />
@@ -38,5 +43,5 @@ const FooterContact = () => (
       </a>
     </div>
   </div>
-);
+)};
 export default FooterContact;
